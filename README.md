@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Notification System Frontend
+
+This is a modern web application built with **Next.js** that serves as the user interface for the Notification System.
+
+## Project Overview
+
+The Notification System allows users to:
+- Submit notification messages.
+- Categorize messages (Finance, Sports, Movies).
+- View delivery logs and history.
+- Manage user subscriptions (SMS, Email, Push).
+
+---
+
+## Prerequisites
+
+Before running the frontend, ensure you have:
+- **Node.js** (LTS version recommended)
+- **The Backend Application** running at `http://localhost:8080`
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### 1. Setup the Backend
 
+Ensure the backend system is running. Follow the instructions in the [Backend README](../notification-system/README.md).
+
+Quick summary:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# In the notification-system directory
+docker-compose up -d
+./mvnw spring-boot:run
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Setup the Frontend
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+In the `notification-frontend` directory, install the dependencies and start the development server:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
+
+---
+
+## Technical Stack
+
+- **Framework**: [Next.js](https://nextjs.org) (App Router)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com)
+- **Icons**: [Lucide React](https://lucide.dev)
+- **Language**: [TypeScript](https://www.typescriptlang.org)
+
+---
+
+## Environment Variables
+
+If you need to point to a different backend URL, create a `.env.local` file:
+
+```env
+NEXT_PUBLIC_API_URL=http://localhost:8080/api
+```
+
+---
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+To learn more about Next.js, take a look at the [Next.js Documentation](https://nextjs.org/docs).
